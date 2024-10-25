@@ -167,6 +167,11 @@
           <div class="content">
             <img src="images/finger_design.png" width="1000px" alt="finger design"></img>
           </div>
+          <div class="content">
+            <video poster="" id="soft_finger" autoplay muted loop controls width="100%">
+              <source src="videos/soft_finger.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -197,6 +202,11 @@
           </div>
           <div class="content">
             <img src="images/shape_estimation.png" width="1000px" alt="finger design"></img>
+          </div>
+          <div class="content">
+            <video poster="" id="shape_estimation" autoplay muted loop controls width="100%">
+              <source src="videos/shape_estimation.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -306,7 +316,7 @@
             </p>
           </div>
           <div class="content">
-            <video poster="" id="hri" autoplay muted loop controls width="100%">
+            <video poster="" id="touch_path_estimation" autoplay muted loop controls width="100%">
               <source src="videos/touch_path_estimation.mp4" type="video/mp4">
             </video>
           </div>
@@ -343,50 +353,47 @@
           <div class="content">
             <img src="images/hri.png" width="100%" alt="human-robot collaboration"></img>
           </div>
+          <div class="content has-text-justified">
+            <p>
+              We also implemented a straightforward regrasping strategy to locate a grasping point nearest to the center
+              of the soft finger surface, which we considered the most stable. In the experiment, the gripper
+              effectively located the target grasping position and securely gripped the pincer after five adjustment
+              attempts.
+            </p>
+          </div>
+          <div class="content">
+            <video poster="" id="adaptive_grasp" autoplay muted loop controls width="100%">
+              <source src="videos/adaptive_grasp.mp4" type="video/mp4">
+            </video>
+          </div>
           <br />
           <h3 class="title is-4">Reconstuct Soft Grasping of Fragile Objects</h3>
           <div class="content has-text-justified">
             <p>
-              Here, we provide a full-system demonstration using our vision-based soft robotic fingers on
-              an underwater
-              Remotely Operated Vehicle (ROV, FIFISH PRO V6 PLUS, QYSEA). It includes a single-DOF robotic
-              gripper,
-              which can be modified using the proposed soft fingers with customized adaptors. Our design
-              conveniently
-              introduced omni-directional adaptation capability to the gripper's existing functionality
-              with added
-              capabilities in real-time tactile sensing underwater. Using the in-finger images, we can use
-              the methods
-              proposed in this work to achieve real-time reconstruction of contact events on our soft
-              robotic finger.
+              To demonstrate applications that utilize the dual benefits of soft finger deformation for both
+              proprioception and exteroception, we conducted further experiments on the intricate task of grasping
+              different soft objects. These experiments are designed to highlight the practical relevance of our
+              research in real-life scenarios, where the subtle modulation of grasping force is crucial to avoid
+              damaging the objects being manipulated.
             </p>
             <p>
-              Since our soft finger can provide large-scale, adaptive deformation conforming to the
-              object's geometric
-              features through contact, we could infer shape-related contact information from the finger's
-              estimated
-              shape during the process. We assume the soft finger's contact patch coincides with that of
-              the object
-              during grasping. As a result, we can predict object surface topography using spatially
-              distributed contact
-              points on the touching interface. In this case, we used a parallel two-finger gripper (HandE
-              from Robotiq,
-              Inc.) attached to the wrist flange of a robotic manipulator (Franka Emika) through a
-              3D-printed
-              cylindrical rod for an extended range of motion. Our soft robotic fingers are attached to
-              each fingertip
-              of the gripper through a customized adapter fabricated by 3D printing. With the gripper
-              submerged
-              underwater, the system is programmed to sequentially execute a series of actions, including
-              gripping and
-              releasing the object and moving along a prescribed direction for a fixed distance to acquire
-              underwater
-              object shape information.
+              We selected various objects recognized for their softness and fragility to damage, including a strawberry,
+              a banana, a lime, a mango, and an empty Coca-Cola can. Each object presents distinct challenges in shape,
+              size, and fragility, thereby comprehensively evaluating our system's capability in delicate grasping. In
+              these experiments, the robotic gripper was programmed to accept positional commands, relying exclusively
+              on the deformation feedback obtained from the soft fingers to modulate the gripping force. There is a
+              direct correlation between the degree of deformation and the contact force exerted by the gripper. By
+              interpreting the deformation data in real time, the system dynamically adjusted the grip to ensure that
+              each object was held securely yet gently enough to avoid causing any damage. This approach underlines the
+              concept of soft grasping, which emphasizes the importance of a delicate touch in robotic manipulation,
+              particularly when interacting with fragile or easily deformable objects. These experiments, which achieved
+              damage-free grasping of fragile objects, demonstrate the proposed system's potential applications in
+              enhancing robotic grippers' tactile sensitivity and adaptability.
             </p>
           </div>
           <div class="content">
-            <video poster="" id="rov_grasping" autoplay muted loop controls width="100%">
-              <source src="videos/rov_grasping.mp4" type="video/mp4">
+            <video poster="" id="grasp_object" autoplay muted loop controls width="100%">
+              <source src="videos/grasp_object.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -399,12 +406,16 @@
       <h2 class="title">BibTeX</h2>
       <pre>
         <code>
-@article{guo2024proprioceptive,
-    title={Proprioceptive State Estimation for Amphibious Tactile Sensing},
-    author={Guo, Ning and Han, Xudong and Zhong, Shuqiao and Zhou, Zhiyuan and Lin, Jian and Dai, Jian S and Wan, Fang and Song, Chaoyang},
-    journal={IEEE Transactions on Robotics},
-    year={2024},
-    publisher={IEEE}
+@article{guo2024reconstructing,
+    title = {Reconstructing Soft Robotic Touch via In-Finger Vision},
+    author = {Guo, Ning and Han, Xudong and Zhong, Shuqiao and Zhou, Zhiyuan and Lin, Jian and Wan, Fang and Song, Chaoyang},
+    journal = {Advanced Intelligent Systems},
+    volume = {6},
+    number = {10},
+    pages = {2400022},
+    year = {2024},
+    doi = {https://doi.org/10.1002/aisy.202400022},
+    publisher={Wiley Online Library}
 }
         </code>
       </pre>
@@ -439,7 +450,6 @@
       duration: 500,
       autoplaySpeed: 5000,
     });
-
   </script>
 </body>
 
